@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body onload="document.searchform.searchterms.focus()">
+  <body onload="document.searchForm.searchTerms.focus()">
     <div class="main">
       <div class="content">
-        <form name="searchForm" onSubmit="dosearch();return false">
+        <form id="searchForm" name="searchForm" onSubmit="dosearch();return false">
           <!-- search for something -->
           <section id="searchMenu">
             <input type="text" name="searchTerms" id="searchInput" />
@@ -26,36 +26,39 @@
             <!-- choices of search engines -->
             <div class="searchCheckbox">
               <label class="search-label" for="Duckduckgo">
-                <input name="sEngine" id="Duckduckgo" type="checkbox" value="https://duckduckgo.com/?q=" checked />
+                <input name="searchEngine" id="Duckduckgo" type="checkbox" value="https://duckduckgo.com/?q=" checked />
                 <span class="checkbox-button"><span></span></span>
                 <!-- <img class="fav-icon" src="https://duckduckgo.com/favicon.ico" /> -->
                 <h3>Duckduckgo</h3>
-                <span class="alt">Q</span>
+                <span class="alt">D</span>
+                <span class="alt">G</span>
               </label>
             </div>
 
             <div class="searchcheckbox">
               <label class="search-label" for="Qwant">
-                <input name="sEngine" id="Qwant" type="checkbox" value="https://www.qwant.com/?l=fr&q=" />
+                <input name="searchEngine" id="Qwant" type="checkbox" value="https://www.qwant.com/?l=fr&q=" />
                 <span class="checkbox-button"><span></span></span>
                 <!-- <img class="fav-icon" src="https://www.qwant.com/public/favicon-96.d39e5aa667ce65e3682b40a29556b70a.png" /> -->
                 <h3>Qwant</h3>
                 <span class="alt">Q</span>
+                <span class="alt">W</span>
               </label>
             </div>
 
             <div class="searchcheckbox">
               <label class="search-label" for="StartPage">
-                <input name="sEngine" id="StartPage" type="checkbox" value="https://www.startpage.com/do/dsearch?query=" />
+                <input name="searchEngine" id="StartPage" type="checkbox" value="https://www.startpage.com/do/dsearch?query=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>StartPage</h3>
-                <span class="alt">Q</span>
+                <span class="alt">S</span>
+                <span class="alt">P</span>
               </label>
             </div>
 
             <div class="searchcheckbox">
               <label class="search-label" for="Wikipedia">
-                <input name="sEngine" id="Wikipedia" type="checkbox" value="https://secure.wikimedia.org/wikipedia/fr/wiki/Special:Search?search=" />
+                <input name="searchEngine" id="Wikipedia" type="checkbox" value="https://secure.wikimedia.org/wikipedia/fr/wiki/Special:Search?search=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>Wikipedia</h3>
                 <span class="alt">W</span>
@@ -64,7 +67,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="Piped">
-                <input name="sEngine" id="Piped" type="checkbox" value="https://piped.kavin.rocks/results?search_query=" />
+                <input name="searchEngine" id="Piped" type="checkbox" value="https://piped.kavin.rocks/results?search_query=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>Piped</h3>
                 <span class="alt">Y</span>
@@ -73,7 +76,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="OSMaps">
-                <input name="sEngine" id="OSMaps" type="checkbox" value="https://www.openstreetmap.org/search?query=" />
+                <input name="searchEngine" id="OSMaps" type="checkbox" value="https://www.openstreetmap.org/search?query=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>Openstreetmap</h3>
                 <span class="alt">O</span>
@@ -82,7 +85,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="QwantMaps">
-                <input name="sEngine" id="QwantMaps" type="checkbox" value="https://www.qwant.com/maps/?q=" />
+                <input name="searchEngine" id="QwantMaps" type="checkbox" value="https://www.qwant.com/maps/?q=" />
                 <span class="checkbox-button"><span></span></span>
                 <!-- <img class="fav-icon" src="https://www.qwant.com/maps/statics/images/favicon.svg" /> -->
                 <h3>QwantMaps</h3>
@@ -92,7 +95,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="Duckduckgo Images">
-                <input name="sEngine" id="Duckduckgo Images" type="checkbox" value="https://duckduckgo.com/?iax=images&ia=images&q=" />
+                <input name="searchEngine" id="Duckduckgo Images" type="checkbox" value="https://duckduckgo.com/?iax=images&ia=images&q=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>DuckduckgoImages</h3>
                 <span class="alt">D</span>
@@ -101,7 +104,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="Reddit">
-                <input name="sEngine" id="Reddit" type="checkbox" value="http://www.reddit.com/search?q=" />
+                <input name="searchEngine" id="Reddit" type="checkbox" value="http://www.reddit.com/search?q=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>Reddit</h3>
                 <span class="alt">R</span>
@@ -110,7 +113,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="IMDB">
-                <input name="sEngine" id="IMDB" type="checkbox" value="http://www.imdb.com/find?q=" />
+                <input name="searchEngine" id="IMDB" type="checkbox" value="http://www.imdb.com/find?q=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>IMDB</h3>
                 <span class="alt">T</span>
@@ -120,7 +123,7 @@
             <div class="searchcheckbox">
               <label class="search-label" for="Face">
                 <input
-                  name="sEngine"
+                  name="searchEngine"
                   id="Face"
                   type="checkbox"
                   value="https://hn.algolia.com/?sort=byPopularity&prefix=false&page=0&dateRange=all&type=all&query="
@@ -133,7 +136,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="Scol">
-                <input name="sEngine" id="Scol" type="checkbox" value="http://whois.domaintools.com/" />
+                <input name="searchEngine" id="Scol" type="checkbox" value="http://whois.domaintools.com/" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>Whois</h3>
                 <span class="alt">E</span>
@@ -142,7 +145,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="OpenSubs">
-                <input name="sEngine" id="OpenSubs" type="checkbox" value="http://www.opensubtitles.org/fr/search2/sublanguageid-fre/moviename-" />
+                <input name="searchEngine" id="OpenSubs" type="checkbox" value="http://www.opensubtitles.org/fr/search2/sublanguageid-fre/moviename-" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>Opensubtitles</h3>
                 <span class="alt">X</span>
@@ -151,7 +154,7 @@
 
             <div class="searchcheckbox">
               <label class="search-label" for="rapidlibrary">
-                <input name="sEngine" id="rapidlibrary" type="checkbox" value="http://www.podnapisi.net/subtitles/search/?keywords=" />
+                <input name="searchEngine" id="rapidlibrary" type="checkbox" value="http://www.podnapisi.net/subtitles/search/?keywords=" />
                 <span class="checkbox-button"><span></span></span>
                 <h3>Podnapisi</h3>
                 <span class="alt">L</span>
@@ -160,8 +163,8 @@
 
             <!-- <div class="searchcheckbox">
               <label class="selectlabel" for="dico">
-                <input name="sEngine" id="dico" type="checkbox" hidden />
-                <select name="sEngineselect2" id="sEngineselect2" onChange="document.getElementById('dico').checked = true;">
+                <input name="searchEngine" id="dico" type="checkbox" hidden />
+                <select name="searchEngineselect2" id="searchEngineselect2" onChange="document.getElementById('dico').checked = true;">
                   <option>Dictionary</option>
                   <option value="http://www.smartdefine.org/">&nbsp;Smart define</option>
                   <option value="http://www.onelook.com/?w=">&nbsp;One look</option>
@@ -188,8 +191,8 @@
 
             <div class="searchcheckbox">
               <label class="selectlabel" for="translate">
-                <input name="sEngine" id="translate" type="checkbox" hidden />
-                <select name="sEngineselect" id="sEngineselect" onChange="document.getElementById('translate').checked = true;">
+                <input name="searchEngine" id="translate" type="checkbox" hidden />
+                <select name="searchEngineselect" id="searchEngineselect" onChange="document.getElementById('translate').checked = true;">
                   <option>Translations</option>
                   <option value="https://dict.leo.org/allemand-fran%C3%A7ais/">&nbsp;Leo français/allemand (5)</option>
                   <option value="https://dict.leo.org/anglais-fran%C3%A7ais/">&nbsp;Leo fr <> de (6)</option>
@@ -204,8 +207,8 @@
 
 			<div class="searchcheckbox">
               <label class="selectlabel" for="spellcheck">
-                <input name="sEngine" id="spellcheck" type="checkbox" hidden />
-                <select name="sEngineselect" id="sEngineselect" onChange="document.getElementById('spellcheck').checked = true;">
+                <input name="searchEngine" id="spellcheck" type="checkbox" hidden />
+                <select name="searchEngineselect" id="searchEngineselect" onChange="document.getElementById('spellcheck').checked = true;">
                   <option>SpellCheck</option>
                   <option value="http://www.spellcheck.net/">&nbsp;anglais</option>
                   <option value="http://www.spellcheck.net/german_spell_checker.html">&nbsp;allemand</option>
@@ -217,8 +220,8 @@
 
             <div class="searchcheckbox">
               <label class="selectlabel" for="misc">
-                <input name="sEngine" id="misc" type="checkbox" hidden />
-                <select name="sEngineselect3" id="sEngineselect3" onChange="document.getElementById('misc').checked = true;">
+                <input name="searchEngine" id="misc" type="checkbox" hidden />
+                <select name="searchEngineselect3" id="searchEngineselect3" onChange="document.getElementById('misc').checked = true;">
                   <option>Others</option>
                   <option value="http://www.rottentomatoes.com/search/?search=">&nbsp;Rotten Tomatoes (0)</option>
                   <option value="http://www.archive.org/search.php?query=">&nbsp;Archive.org</option>
@@ -288,7 +291,7 @@
                   <option value="http://www.namecheck.com/search/">&nbsp;Name check</option>
                   <option value="http://wayback.archive.org/web/*/">&nbsp;Wayback url</option>
                   <option value="http://www.copyscape.com/?q=">&nbsp;Copyscape</option>
-                  <option value="http://mycroft.mozdev.org/sEngines.html?name=">&nbsp;Mycroft</option>
+                  <option value="http://mycroft.mozdev.org/searchEngines.html?name=">&nbsp;Mycroft</option>
                   <option value="http://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=">&nbsp;Alibaba</option>
                   <option value="http://www.xe.com/ucc/convert/?language=fr&From=USD&To=EUR&Amount=">&nbsp;USD > EUR</option>
                   <option value="http://www.xe.com/ucc/convert/?language=fr&From=EUR&To=USD&Amount=">&nbsp;EUR > USD</option>

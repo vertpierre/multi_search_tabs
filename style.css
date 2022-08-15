@@ -22,7 +22,7 @@ html {
 }
 
 h3 {
-  margin: 0;
+  margin: 0 1rem 0 0;
 }
 
 input,
@@ -111,14 +111,14 @@ input[type="checkbox"]:checked + .checkbox-button span {
   position: relative;
   display: flex;
   width: 1.2rem;
-  margin-left: 1.2rem;
+  margin-left: 0.2rem;
   font-weight: 700;
   font-size: 0.9rem;
   border-radius: var(--border-rad-in);
   box-shadow: var(--shadow-m);
   background-color: var(--white);
   color: var(--hue-color-ld);
- padding: 0.1rem 0.2rem 0.4rem 0.2rem;
+  padding: 0.1rem 0.2rem 0.4rem 0.2rem;
 }
 
 @keyframes hueRotation {
@@ -130,7 +130,7 @@ input[type="checkbox"]:checked + .checkbox-button span {
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   body {
     background-color: var(--hue-color-dd);
   }
@@ -159,4 +159,4 @@ input[type="checkbox"]:checked + .checkbox-button span {
     background-color: var(--hue-color-dd);
     color: var(--hue-color-dl);
   }
-} */
+}
