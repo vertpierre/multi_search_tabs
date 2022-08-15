@@ -1,0 +1,9 @@
+{
+  "name": "Multi search tabs",
+  "version": "0.01",
+  "description": "Display on new tab",
+  "chrome_url_overrides":{
+    "newtab": "newsearch.html"
+  },
+  "manifest_version": 2
+}
