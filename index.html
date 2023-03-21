@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>New Search</title>
+  </head>
+
+  <body>
+    <div id="main">
+      <div class="invertTheme">
+        <label class="switch">
+          <input type="checkbox" onclick="invertTheme()" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div id="content">
+        <form id="search-form">
+          <section id="search-menu">
+            <button id="reset" type="reset" aria-label="reset">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.28 5.22a.75.75 0 0 0-1.06 1.06l5.47 5.47-5.47 5.47a.75.75 0 1 0 1.06 1.06l5.47-5.47 5.47 5.47a.75.75 0 1 0 1.06-1.06l-5.47-5.47 5.47-5.47a.75.75 0 0 0-1.06-1.06l-5.47 5.47-5.47-5.47z"
+                ></path>
+              </svg>
+            </button>
+            <input type="text" id="search-input" aria-label="search" />
+            <button id="submit" type="submit" aria-label="submit">
+              <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24.317 22.959a11.474 11.474 0 0 0 2.723-7.439C27.04 9.158 21.882 4 15.52 4 9.158 4 4 9.158 4 15.52c0 6.362 5.158 11.52 11.52 11.52 2.836 0 5.432-1.024 7.439-2.723l3.402 3.402a.96.96 0 1 0 1.358-1.358l-3.402-3.402zm.803-7.439a9.6 9.6 0 1 1-19.2 0 9.6 9.6 0 0 1 19.2 0z"
+                ></path>
+              </svg>
+            </button>
+          </section>
+        </form>
+
+        <form id="search-engine">
+          <!-- choices of search engines -->
+
+          <div class="search-checkbox search-section">
+            <h3>Global</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="duckduckgo">
+              <input id="duckduckgo" class="select-engine" type="checkbox" value="https://duckduckgo.com/?q=" />
+              <span class="checkbox-button"></span>
+              <!-- <img class="fav-icon" src="https://duckduckgo.com/favicon.ico" /> -->
+              <h3>Duckduckgo</h3>
+              <span class="alt">D</span>
+              <span class="alt">G</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="qwant">
+              <input id="qwant" class="select-engine" type="checkbox" value="https://www.qwant.com/?l=fr&q=" />
+              <span class="checkbox-button"></span>
+              <!-- <img class="fav-icon" src="https://www.qwant.com/public/favicon-96.d39e5aa667ce65e3682b40a29556b70a.png" /> -->
+              <h3>Qwant</h3>
+              <span class="alt">Q</span>
+              <span class="alt">W</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="startpage">
+              <input id="startpage" class="select-engine" type="checkbox" value="https://www.startpage.com/do/dsearch?query=" />
+              <span class="checkbox-button"></span>
+              <h3>StartPage</h3>
+              <span class="alt">S</span>
+              <span class="alt">P</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="ecosia">
+              <input id="ecosia" class="select-engine" type="checkbox" value="https://www.ecosia.org/search?method=index&q=" />
+              <span class="checkbox-button"></span>
+              <h3>Ecosia</h3>
+              <span class="alt">S</span>
+              <span class="alt">P</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox search-section">
+            <h3>Cartes</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="osmaps">
+              <input id="osmaps" class="select-engine" type="checkbox" value="https://www.openstreetmap.org/search?query=" />
+              <span class="checkbox-button"></span>
+              <h3>Openstreetmap</h3>
+              <span class="alt">O</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="qwantmaps">
+              <input id="qwantmaps" class="select-engine" type="checkbox" value="https://www.qwant.com/maps/?q=" />
+              <span class="checkbox-button"></span>
+              <!-- <img class="fav-icon" src="https://www.qwant.com/maps/statics/images/favicon.svg" /> -->
+              <h3>QwantMaps</h3>
+              <span class="alt">F</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox search-section">
+            <h3>Vidéo</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="piped">
+              <input id="piped" class="select-engine" type="checkbox" value="https://piped.kavin.rocks/results?search_query=" />
+              <span class="checkbox-button"></span>
+              <h3>Piped</h3>
+              <span class="alt">Y</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox search-section">
+            <h3>Images</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="duckduckgo-image">
+              <input id="duckduckgo-image" class="select-engine" type="checkbox" value="https://duckduckgo.com/?iax=images&ia=images&q=" />
+              <span class="checkbox-button"></span>
+              <h3>Duckduckgo</h3>
+              <span class="alt">D</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="qwant-image">
+              <input id="qwant-image" class="select-engine" type="checkbox" value="https://www.qwant.com/?l=fr&t=images&q=" />
+              <span class="checkbox-button"></span>
+              <h3>Qwant</h3>
+              <span class="alt">D</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="ecosia-image">
+              <input id="ecosia-image" class="select-engine" type="checkbox" value="https://www.ecosia.org/images?q=" />
+              <span class="checkbox-button"></span>
+              <h3>Ecosia</h3>
+              <span class="alt">S</span>
+              <span class="alt">P</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="openclipart">
+              <input id="openclipart" class="select-engine" type="checkbox" value="https://openclipart.org/search/?query=" />
+              <span class="checkbox-button"></span>
+              <h3>Openclipart</h3>
+              <span class="alt">D</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="pexels">
+              <input id="pexels" class="select-engine" type="checkbox" value="https://www.pexels.com/fr-fr/chercher/" />
+              <span class="checkbox-button"></span>
+              <h3>Pexels</h3>
+              <span class="alt">P</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="unsplash">
+              <input id="unsplash" class="select-engine" type="checkbox" value="https://unsplash.com/fr/s/photos/" />
+              <span class="checkbox-button"></span>
+              <h3>Unsplash</h3>
+              <span class="alt">P</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="lexica">
+              <input id="lexica" class="select-engine" type="checkbox" value="https://lexica.art/?q=" />
+              <span class="checkbox-button"></span>
+              <h3>Lexica</h3>
+              <span class="alt">L</span>
+              <span class="alt">X</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox search-section">
+            <h3>Sons</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="freesound">
+              <input id="freesound" class="select-engine" type="checkbox" value="https://freesound.org/search/?q=" />
+              <span class="checkbox-button"></span>
+              <h3>FreeSound</h3>
+              <span class="alt">D</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox search-section">
+            <h3>Dicos & Encyclos</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="wikipedia">
+              <input id="wikipedia" class="select-engine" type="checkbox" value="https://secure.wikimedia.org/wikipedia/fr/wiki/Special:Search?search=" />
+              <span class="checkbox-button"></span>
+              <h3>Wikipedia</h3>
+              <span class="alt">W</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="cnrtl-def">
+              <input id="cnrtl-def" class="select-engine" type="checkbox" value="http://www.cnrtl.fr/definition/" />
+              <span class="checkbox-button"></span>
+              <h3>Cntrl définition</h3>
+              <span class="alt">W</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox search-section">
+            <h3>Mots</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="cnrtl-syn">
+              <input id="cnrtl-syn" class="select-engine" type="checkbox" value="http://www.cnrtl.fr/synonymie/" />
+              <span class="checkbox-button"></span>
+              <h3>Cntrl synonyme</h3>
+              <span class="alt">W</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="synonymo">
+              <input id="synonymo" class="select-engine" type="checkbox" value="http://www.synonymo.fr/synonyme/" />
+              <span class="checkbox-button"></span>
+              <h3>Synonymo</h3>
+              <span class="alt">W</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox search-section">
+            <h3>Autre</h3>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="reddit">
+              <input id="reddit" class="select-engine" type="checkbox" value="http://www.reddit.com/search?q=" />
+              <span class="checkbox-button"></span>
+              <h3>Reddit</h3>
+              <span class="alt">R</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="imdb">
+              <input id="imdb" class="select-engine" type="checkbox" value="http://www.imdb.com/find?q=" />
+              <span class="checkbox-button"></span>
+              <h3>IMDB</h3>
+              <span class="alt">T</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="hackernews">
+              <input
+                id="hackernews"
+                class="select-engine"
+                type="checkbox"
+                value="https://hn.algolia.com/?sort=byPopularity&prefix=false&page=0&dateRange=all&type=all&query="
+              />
+              <span class="checkbox-button"></span>
+              <h3>HackerNews</h3>
+              <span class="alt">S</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="whois">
+              <input id="whois" class="select-engine" type="checkbox" value="http://whois.domaintools.com/" />
+              <span class="checkbox-button"></span>
+              <h3>Whois</h3>
+              <span class="alt">E</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label" for="opensubs">
+              <input id="opensubs" class="select-engine" type="checkbox" value="http://www.opensubtitles.org/fr/search2/sublanguageid-fre/moviename-" />
+              <span class="checkbox-button"></span>
+              <h3>Opensubtitles</h3>
+              <span class="alt">X</span>
+            </label>
+          </div>
+
+          <div class="search-checkbox">
+            <label class="search-label">
+              <a href="http://fr.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener">
+                <h3>Wikipedia Random</h3>
+              </a>
+              <span class="alt">W</span>
+              <span class="alt">R</span>
+            </label>
+          </div>
+
+          <div class="links"></div>
+
+          <!-- <div class="search-checkbox">
+              <label class="selectlabel" for="dico">
+                <input id="dico" class="select-engine" type="checkbox" hidden />
+                <select name="searchEngineselect2" id="searchEngineselect2" onChange="document.getElementById('dico').checked = true;">
+                  <option>Dictionary</option>
+                  <option value="http://www.smartdefine.org/">&nbsp;Smart define</option>
+                  <option value="http://www.onelook.com/?w=">&nbsp;One look</option>
+                  <option value="http://www.lexic.us/definition-of/">&nbsp;Lexic.us</option>
+                  <option value="http://www.synonym.com/synonyms/">&nbsp;Synonyms</option>
+                  <option value="http://www.theconjugator.com/la/conjugaison/du/verbe/">&nbsp;Conjugator</option>
+                  <option stared="true" value="http://thesaurus.reference.com/search?q=">&nbsp;Thesaurus.com</option>
+                  <option value="http://www.etymonline.com/index.php?search=">&nbsp;Etymology</option>
+                  <option value="http://www.urbandictionary.com/define.php?term=">&nbsp;Urban dico (1)</option>
+                  <option value="http://www.cnrtl.fr/definition/">&nbsp;Cnrtl définition</option>
+                  <option value="http://www.cnrtl.fr/synonymie/">&nbsp;Cnrtl Synonymie</option>
+                  <option value="http://portail.atilf.fr/cgi-bin/dico1look.pl?strippedhw=&headword=">&nbsp;Français classique</option>
+                  <option value="http://francois.gannaz.free.fr/Littre/xmlittre.php?submit=Rechercher&requete=">&nbsp;XMLittré</option>
+                  <option value="http://www.dictionnaire.exionnaire.com/que-signifie.php?application=rime&mot=">&nbsp;Rimes</option>
+                  <option value="http://www.languefrancaise.net/bob/liste.php?submit=&moduless=siterech&motsclef=">&nbsp;Argot</option>
+                  <option value="http://www.mediadico.com/dictionnaire/definition/">&nbsp;Mediadico</option>
+                  <option value="http://bescherelle.leconjugueur.com/frconjugue.php?verbe=">&nbsp;Conjugaison</option>
+                  <option value="http://bonpatron.com/?submitbutton=Vérifier le texte&typedText=">&nbsp;BonPatron</option>
+                  <option value="http://www.qwika.com/find-fr/">&nbsp;Qwika</option>
+                  <option value="http://www.wolframalpha.com/input/?i=">&nbsp;WolframAlpha</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="search-checkbox">
+              <label class="selectlabel" for="translate">
+                <input id="translate" class="select-engine" type="checkbox" hidden />
+                <select name="searchEngineselect" id="searchEngineselect" onChange="document.getElementById('translate').checked = true;">
+                  <option>Translations</option>
+                  <option value="https://dict.leo.org/allemand-fran%C3%A7ais/">&nbsp;Leo français/allemand (5)</option>
+                  <option value="https://dict.leo.org/anglais-fran%C3%A7ais/">&nbsp;Leo fr <> de (6)</option>
+                  <option value="http://www.linguee.fr/francais-anglais/search?query=">&nbsp;Linguee en <> fr</option>
+                  <option value="http://www.linguee.fr/francais-allemand/search?query=">&nbsp;Linguee de <> fr</option>
+                  <option value="http://www.linguee.fr/francais-espagnol/search?query=">&nbsp;Linguee es <> fr</option>
+                  <option value="http://enfr.dict.cc/?s=">&nbsp;Dict.cc en <> fr</option>
+                  <option value="http://defr.dict.cc/?s=">&nbsp;Dict.cc de <> fr</option>
+                </select>
+              </label>
+            </div>
+
+			<div class="search-checkbox">
+              <label class="selectlabel" for="spellcheck">
+                <input id="spellcheck" class="select-engine" type="checkbox" hidden />
+                <select name="searchEngineselect" id="searchEngineselect" onChange="document.getElementById('spellcheck').checked = true;">
+                  <option>SpellCheck</option>
+                  <option value="http://www.spellcheck.net/">&nbsp;anglais</option>
+                  <option value="http://www.spellcheck.net/german_spell_checker.html">&nbsp;allemand</option>
+                  <option value="https://www.spellchecker.net/espanol/">&nbsp;espagnol</option>
+                  <option value="http://bonpatron.com/">&nbsp;français</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="search-checkbox">
+              <label class="selectlabel" for="misc">
+                <input id="misc" class="select-engine" type="checkbox" hidden />
+                <select name="searchEngineselect3" id="searchEngineselect3" onChange="document.getElementById('misc').checked = true;">
+                  <option>Others</option>
+                  <option value="http://www.rottentomatoes.com/search/?search=">&nbsp;Rotten Tomatoes (0)</option>
+                  <option value="http://www.archive.org/search.php?query=">&nbsp;Archive.org</option>
+                  <option value="http://www.tvrage.com/search.php?jumpMenu=All&search=">&nbsp;Tv Rage</option>
+                  <option value="http://www.discogs.com/search?q=">&nbsp;Discogs (2)</option>
+                  <option value="http://www.last.fm/music/">&nbsp;Last.fm</option>
+                  <option value="http://www.myspace.com/search/Music?q=">&nbsp;Myspace</option>
+                  <option value="http://www.music-map.com/">&nbsp;Music map</option>
+                  <option value="http://hypem.com/search/">&nbsp;Hype machine</option>
+                  <option value="http://www.mixcloud.com/search/?mixcloud_query=">&nbsp;Mixcloud</option>
+                  <option value="http://bandcamp.com/tag/">&nbsp;BandCamp tag</option>
+                  <option value="http://soundcloud.com/tracks/search?q[fulltext]=">&nbsp;Soundcloud</option>
+                  <option value="http://www.findsounds.com/ISAPI/search.dll?keywords=">&nbsp;Find sounds</option>
+                  <option value="http://www.midomi.com/index.php?action=main.text_search&searchTerm=">&nbsp;Midomi</option>
+                  <option value="http://www.scoop.it/search?q=">&nbsp;Scoop It</option>
+                  <option value="http://topsy.com/s?q=">&nbsp;Topsy</option>
+                  <option value="http://smashfuse.com/search/">&nbsp;Smashfuse</option>
+                  <option value="http://storify.com/search?q=">&nbsp;Storify</option>
+                  <option value="http://pinboard.in/t:">&nbsp;Pinboard.in</option>
+                  <option value="http://pinterest.com/search/?q=">&nbsp;Pinterest</option>
+                  <option value="http://www.exalead.com/search/web/results/?q=">&nbsp;Exalead</option>
+                  <option value="http://www.yubnub.org/parser/parse?command=">&nbsp;Yubnub</option>
+                  <option value="http://nominatim.openstreetmap.org/search.php?q=">&nbsp;Open street map</option>
+                  <option value="http://www.qsview.com/s/">&nbsp;Instant streetview</option>
+                  <option value="http://wikitravel.org/fr/Special:Search?ns0=1&searchx=Rechercher&search=">&nbsp;Wiki travel</option>
+                  <option value="https://github.com/search?q=">&nbsp;Github (3)</option>
+                  <option value="http://sourceforge.net/directory/?q=">&nbsp;Sourceforge</option>
+                  <option value="http://stackoverflow.com/search?q=">&nbsp;Stack overflow</option>
+                  <option value="https://www.ohloh.net/p?q=">&nbsp;Ohloh</option>
+                  <option value="http://freecode.com/search?q=">&nbsp;Freecode</option>
+                  <option value="http://www.koders.com/default.aspx?s=">&nbsp;Koders</option>
+                  <option value="http://slashdot.org/index2.pl?fhfilter=">&nbsp;Slashdot</option>
+                  <option value="http://images.search.yahoo.com/search/images?p=">&nbsp;Yahoo image</option>
+                  <option value="http://labs.creativecommons.org/demos/search/?q=">&nbsp;Creative commons</option>
+                  <option value="http://www.iconfinder.com/search/?q=">&nbsp;Icon finder</option>
+                  <option value="http://dribbble.com/search?q=">&nbsp;Dribbble</option>
+                  <option value="http://browse.deviantart.com/?q=">&nbsp;Deviant art</option>
+                  <option value="http://compfight.com/search/">&nbsp;Compfight</option>
+                  <option value="http://www.seeklogo.com/tag.html?q=">&nbsp;Seeklogo</option>
+                  <option value="http://www.marmiton.org/recettes/recherche.aspx?sort=popularitydesc&st=5&aqt=">&nbsp;Marmiton (fr)</option>
+                  <option value="http://www.supertoinette.com/liste-recettes/">&nbsp;Supertoinette (fr)</option>
+                  <option value="http://allrecipes.com/Search/Recipes.aspx?WithTerm=">&nbsp;All recipes</option>
+                  <option value="https://www.librarything.com/search.php?search=">&nbsp;Library thing</option>
+                  <option value="https://idreambooks.com/newbooks/search?q=">&nbsp;iDreamBooks</option>
+                  <option value="http://www.gutenberg.org/ebooks/search/?query=">&nbsp;Gutenberg Project</option>
+                  <option value="http://www.artcyclopedia.com/scripts/tsearch.pl?t=">&nbsp;Artcyclopedia</option>
+                  <option value="http://www.infoplease.com/search?q=">&nbsp;Infoplease</option>
+                  <option value="http://www.sudoc.abes.fr/DB=2.1/SET=15/TTL=1/CMD?ACT=SRCHA&amp;IKT=4&amp;SRT=RLV&amp;TRM=">&nbsp;Sudoc</option>
+                  <option value="http://www.sweetsearch.com/search?q=">&nbsp;Sweetsearch</option>
+                  <option value="http://www.worldcat.org/search?qt=worldcat_org_all&q=">&nbsp;Worldcat</option>
+                  <option value="http://www.connotea.org/search?q=">&nbsp;Connotea</option>
+                  <option value="http://www.bdgest.com/search.php?q=">&nbsp;BD gest</option>
+                  <option value="http://www.comics.org/series/name/">&nbsp;Comics</option>
+                  <option value="http://www.bcdb.com/bcdb/search.cgi?query=">&nbsp;Big cartoon</option>
+                  <option value="http://www.animeka.com/search/index.html?req=">&nbsp;Animeka</option>
+                  <option value="http://digg.com/search?q=">&nbsp;Digg</option>
+                  <option value="http://search.popurls.com/?q=">&nbsp;Popurls</option>
+                  <option value="http://socialmention.com/search?q=">&nbsp;Social mention</option>
+                  <option value="http://www.friendorfollow.com/">&nbsp;Friend or follow</option>
+                  <option value="http://www.diigo.com/tag/">&nbsp;Diigo</option>
+                  <option value="http://www.dmoz.org/search?q=">&nbsp;Dmoz</option>
+                  <option value="http://www.freebase.com/search?query=">&nbsp;Freebase</option>
+                  <option value="http://addictomatic.com/topic/">&nbsp;Addictomatic</option>
+                  <option value="http://whatismyipaddress.com/ip/">&nbsp;What is my ip (4)</option>
+                  <option value="http://whois.domaintools.com/">&nbsp;Whois.sc (5)</option>
+                  <option value="http://www.downforeveryoneorjustme.com/">&nbsp;Is down ?</option>
+                  <option value="http://www.namecheck.com/search/">&nbsp;Name check</option>
+                  <option value="http://wayback.archive.org/web/*/">&nbsp;Wayback url</option>
+                  <option value="http://www.copyscape.com/?q=">&nbsp;Copyscape</option>
+                  <option value="http://mycroft.mozdev.org/searchEngines.html?name=">&nbsp;Mycroft</option>
+                  <option value="http://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=">&nbsp;Alibaba</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=USD&To=EUR&Amount=">&nbsp;USD > EUR</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=EUR&To=USD&Amount=">&nbsp;EUR > USD</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=CAD&To=EUR&Amount=">&nbsp;CAD > EUR</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=EUR&To=CAD&Amount=">&nbsp;EUR > CAD</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=GBP&To=EUR&Amount=">&nbsp;GBP > EUR</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=EUR&To=GBP&Amount=">&nbsp;EUR > GBP</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=CHF&To=EUR&Amount=">&nbsp;CHF > EUR</option>
+                  <option value="http://www.xe.com/ucc/convert/?language=fr&From=EUR&To=CHF&Amount=">&nbsp;EUR > CHF</option>
+                </select></label
+              >
+            </div> -->
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/colours.js"></script>
+  </body>
+</html>
